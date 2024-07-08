@@ -8,6 +8,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.project.board.question.Question;
+import com.project.board.question.QuestionRepository;
+
 @SpringBootTest
 class BoardApplicationTests {
 
