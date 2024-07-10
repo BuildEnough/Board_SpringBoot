@@ -9,20 +9,21 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.project.board.question.Question;
 import com.project.board.question.QuestionRepository;
+import com.project.board.question.QuestionService;
 
 @SpringBootTest
 class BoardApplicationTests {
 
 	@Autowired
-	private QuestionRepository questionRepository;
+	private QuestionService questionService;
 	
 	@Test
 	void testJpa() {
-		Optional<Question> oq = this.questionRepository.findById(1);
-		assertTrue(oq.isPresent());
-		Question q = oq.get();
-		q.setSubject("수정된 제목");
-		this.questionRepository.save(q);
+		for(int i=1; i<=300; i++) {
+			String subject = String.format("테스트 Data:[%03d]", i);
+			String content = "내용없음";
+			this.questionService.create(subject, content);
+		}
 	}
 
 }
