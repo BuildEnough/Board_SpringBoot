@@ -22,7 +22,7 @@ class BoardApplicationTests {
 		for(int i=1; i<=300; i++) {
 			String subject = String.format("테스트 Data:[%03d]", i);
 			String content = "내용없음";
-			this.questionService.create(subject, content);
+			this.questionService.create(subject, content, null);
 		}
 	}
 
